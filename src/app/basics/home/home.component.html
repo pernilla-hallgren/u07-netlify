@@ -1,1 +1,30 @@
 <p>home works!</p>
+
+<h3>Get Inspired!</h3>
+
+<div class="card-deck">
+    <div class="row mt-3">
+        <div class="col-sm-12 col-md-6 col-lg-2" *ngFor="let result of ( results | async )?.hits">
+            <div class="card text-center"> 
+                <img class="img-fluid img-thumbnail" src="{{result.recipe.image}}" alt="">
+                <a class="thumbnail" href="#"><i class="bi bi-suit-heart-fill"></i></a>
+                <div class="card-body">
+                    <h5 class="card-title">{{ result.recipe.label }}</h5>
+                    <a class="btn btn-primary" [routerLink]="['/recipe', result.recipe.uri]" routerLinkActive="active">Go to recipe detail!</a>   
+                </div>
+            </div>
+        </div>
+    </div>
+       
+</div>
+
+
+<!-- <ul>
+    <li *ngFor="let result of ( results | async )?.hits">
+        {{ result.recipe.label }}
+        <img class="img-fluid img-thumbnail" src="{{result.recipe.image}}" alt="">
+        <a [routerLink]="['/recipe', result.recipe.uri]" routerLinkActive="active">Go to recipe detail!</a>   
+    </li>
+</ul> -->
+
+<!-- <router-outlet></router-outlet> -->
