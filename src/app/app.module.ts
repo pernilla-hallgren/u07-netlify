@@ -8,7 +8,6 @@ import { AppComponent } from './app.component';
 import { RecipesModule } from './recipes/recipes.module';
 import { PageNotFoundComponent } from './basics/page-not-found/page-not-found.component';
 import { HomeComponent } from './basics/home/home.component';
-
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
