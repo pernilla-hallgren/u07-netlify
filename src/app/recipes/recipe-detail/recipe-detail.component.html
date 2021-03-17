@@ -1,1 +1,24 @@
 <p>recipe-detail works!</p>
+
+<!-- <a routerLink="/favourite-list">Go to your favourite-list!</a> -->
+
+<!-- <div *ngIf="recipe">
+  <h2>{{recipe.label | uppercase}}</h2>
+  <p>Ingredients: {{ recipe.ingredientLines }}</p>
+  <img class="img-fluid img-thumbnail" src="{{recipe.image}}" alt="">
+  <button (click)="addToFavourites(recipe)">Add to favourites!</button>
+    
+</div> -->
+
+<div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-6" *ngIf="recipe">
+        <div class="card mb-3">
+            <img class="img-fluid img-thumbnail" src="{{recipe.image}}" alt="">
+            <div class="card-body">
+                <h2>{{recipe.label | uppercase}}</h2>
+                <p>Ingredients: {{ recipe.ingredientLines }}</p>
+                <button class="btn btn-primary" (click)="addToFavourites(recipe)">Add to favourites!</button>
+            </div>
+        </div>
+    </div>
+</div>

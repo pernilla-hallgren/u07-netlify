@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { RecipesService } from '../recipes.service';
+
+
 @Component({
   selector: 'app-favourite-list',
   templateUrl: './favourite-list.component.html',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavouriteListComponent implements OnInit {
 
-  constructor() { }
+  items = this.recipesService.getFavourites();
+
+  constructor(private recipesService: RecipesService) { }
 
   ngOnInit(): void {
+    
   }
+
+  // denna metod kalla på serive metoden där vi skapat deleteOne()
+  deleteOneFavourite(item) {
+    this.recipesService.deleteOne(item);
+  }
+
+  clearFavourites() {
+    this.recipesService.clearFavouriteList();
+    this.items = this.recipesService.getFavourites();
+  }
+
+  
 
 }
