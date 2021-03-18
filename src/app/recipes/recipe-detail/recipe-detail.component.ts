@@ -32,7 +32,7 @@ export class RecipeDetailComponent implements OnInit {
 
   addToFavourites(recipe) {
     this.recipesService.addToFavourites(recipe);
-    window.alert('Recipe has been added to your favourite list!');
+    // window.alert('Recipe has been added to your favourite list!');
   }
 
 

@@ -7,7 +7,7 @@ import { RecipeFormComponent } from './recipe-form/recipe-form.component';
 const routes: Routes = [
   { path: 'recipe-search', component: RecipeFormComponent },
   { path: 'recipe-detail/:id', component: RecipeDetailComponent },
-  { path: 'my-recipes', component: FavouriteListComponent },
+  { path: 'favourite-recipes', component: FavouriteListComponent },
 
 ];
 

@@ -1,1 +1,39 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Karla', sans-serif;
+    font-size: 15px;
+    font-weight: 200;
+    /* position: relative;
+    min-height: 100vh; */
+}
+
+.btn-outline-secondary {
+    border-radius: 20px;
+    color: black;
+    font-size: 14px;
+    font-weight: 100;
+    margin-top: 20px;
+}
+
+.bi-suit-heart-fill {
+    text-shadow: 0 0 3px rgb(43, 43, 43);
+    outline: grey;
+    font-size: 20px;
+    padding: 8px;
+    /* position: absolute; */
+    top: 3px;
+    right: 3px;
+    color: white;
+}
+
+.bi-suit-heart-fill:hover {
+    color: rgb(1, 167, 1);
+    cursor: pointer;
+}
+

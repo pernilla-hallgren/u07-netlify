@@ -1,88 +1,78 @@
-<p>recipe-form works!</p>
 
-<form (ngSubmit)="onSubmit(recipeForm)" #recipeForm="ngForm">
-    <label for="text">Search for recipes</label>
-    <!-- <input (input)="querystring=$event.target.value"> -->
-    <input name="querystring" type="text" [(ngModel)]="querystring">
+<section>
+    <div class="main">
+        <div class="form-group has-search">
+            <form (ngSubmit)="onSubmit(recipeForm)" #recipeForm="ngForm">
+                <h4 class="text-center mb-4">Search for recipes</h4>
+                <span class="fa fa-search form-control-feedback"></span>
+                <input class="form-control mb-3" name="querystring" type="text" placeholder="Search" [(ngModel)]="querystring">
+                <!-- mealType -->
+                <div class="container-fluid border-bottom p-1">
+                    <span>
+                        <h6 class="mt-2">Choose a meal type:</h6>
+                        <label class="m-2" for="breakfast">Breakfast</label>
+                        <input type="radio" value="breakfast" id="breakfast" name="mealType" ngModel>
+                    </span>
+                    <span>
+                        <label class="m-2" for="lunch">Lunch</label>
+                        <input type="radio" value="lunch" id="lunch" name="mealType" ngModel> 
+                    </span>
+                    <span>
+                        <label class="m-2" for="dinner">Dinner</label>
+                        <input type="radio" value="dinner" id="dinner" name="mealType" ngModel> 
+                    </span>
+                </div>
 
-    <p>
-        <label for="breakfast">Breakfast</label>
-        <input type="radio" value="breakfast" id="breakfast" name="mealType" ngModel>
-        <!-- <input type="text" id="email" name="email"  [(ngModel)]="contact.email" -->
-    </p>
-    <p>
-        <label for="lunch">Lunch</label>
-        <input type="radio" value="lunch" id="lunch" name="mealType" ngModel> 
-    </p>
-    <p>
-        <label for="dinner">Dinner</label>
-        <input type="radio" value="dinner" id="dinner" name="mealType" ngModel> 
-    </p>
+                <!-- dietLabel -->
+                <div class="container-fluid border-bottom p-1">
+                    <span>
+                        <h6 class="mt-2">Choose a diet label:</h6>
+                        <label class="m-2" for="high-fiber">high-fiber</label>
+                        <input type="radio" id="high-fiber" value="high-fiber" name="dietLabel" ngModel>
+                    </span>
+                    <span>
+                        <label class="m-2" for="high-protein">high-protein</label>
+                        <input type="radio" id="high-protein" value="high-protein" name="dietLabel" ngModel> 
+                    </span>
+                    <span>
+                        <label class="m-2" for="low-carb">low-carb</label>
+                        <input type="radio" id="low-carb" value="low-carb" name="dietLabel"  ngModel>
+                    </span>
+                </div>
 
-    <!-- dietLabel -->
-    <p>
-        <label for="high-fiber">high-fiber</label>
-        <input type="radio" id="high-fiber" value="high-fiber" name="dietLabel" ngModel>
-    </p>
-    <p>
-        <label for="high-protein">high-protein</label>
-        <input type="radio" id="high-protein" value="high-protein" name="dietLabel" ngModel> 
-    </p>
-    <p>
-        <label for="low-carb">low-carb</label>
-        <input type="radio" id="low-carb" value="low-carb" name="dietLabel"  ngModel>
-    </p>
+                <!-- healthLabel -->
+                <div class="container-fluid border-bottom p-1">
+                    <span>
+                        <h6 class="mt-2">Choose a health label:</h6>
+                        <label class="m-2" for="vegetarian">vegetarian</label>
+                        <input type="radio" id="vegetarian" value="vegetarian" name="healthLabel" ngModel>
+                    </span>
+                    <span>
+                        <label class="m-2" for="gluten-free">gluten-free</label>
+                        <input type="radio" id="gluten-free" value="gluten-free" name="healthLabel" ngModel> 
+                    </span>
+                    <span>
+                        <label class="m-2" for="peanut-free">peanut-free</label>
+                        <input type="radio" id="peanut-free" value="peanut-free" name="healthLabel" ngModel>
+                    </span>
+                </div>
 
-    <!-- healthLabel -->
-    <p>
-        <label for="vegetarian">vegetarian</label>
-        <input type="radio" id="vegetarian" value="vegetarian" name="healthLabel" ngModel>
-    </p>
-    <p>
-        <label for="gluten-free">gluten-free</label>
-        <input type="radio" id="gluten-free" value="gluten-free" name="healthLabel" ngModel> 
-    </p>
-    <p>
-        <label for="peanut-free">peanut-free</label>
-        <input type="radio" id="peanut-free" value="peanut-free" name="healthLabel" ngModel>
-    </p>
-
-    <button type="submit">Search</button>
-</form>
-
-<!-- <ul> -->
-    <!-- Angular provides the index variable in ngFor so you can use it when iterating your array. -->
-    <!-- <li *ngFor="let result of ( results | async )?.hits let i = index" id="{{ i }}">
-        {{ i }}
-        <span>{{ result.recipe.label }}</span>
-        <span>{{ result.recipe.uri }}</span>
-        {{ result.recipe.ingredientLines }}
-        <img class="img-fluid img-thumbnail" src="{{result.recipe.image}}" alt="">
-        <a routerLink="/recipe/{{ result.recipe.uri }}" routerLinkActive="active">Go to recipes details!</a> -->
-        <!-- You're using Angular interpolation binding within the *ngFor repeater to insert the current iteration's hero.id into each routerLink. -->
-        
-        <!-- <button (click)="onSelect()">
-            <a routerLink="/recipe" routerLinkActive="active">Go to recipes details!</a>
-        </button>
-    </li>
-</ul> -->
+                <div>
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </div>
+            </form>
+        </div>    
+    </div>
+</section>
 
 <div class="card-deck">
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-2 p-3" *ngFor="let result of ( results | async )?.hits">
             <div class="card"> 
                 <img class="img-fluid img-thumbnail" src="{{result.recipe.image}}" alt="">
-                <a class="thumbnail" href="#"><i class="bi bi-suit-heart-fill"></i></a>
                 <div class="card-body">
-                    <p>{{result.recipe.label}}</p>
-                    <span>{{ result.recipe.uri }}</span>
-                    <a class="btn btn-primary" [routerLink]="['/recipe-detail', result.recipe.uri]" routerLinkActive="active">Go to recipe detail!</a>   
-
-                    <!-- <span>{{i}}{{result.recipe.uri}}</span> -->
-                    <!-- <a (click)="onSelect(result.recipe.uri)">Click</a> -->
-                    <!-- <button (click)="onSelect(result.recipe.uri)">
-                        <a routerLink="/recipe" routerLinkActive="active">Go to recipes details!</a>
-                    </button>  -->
+                    <h6>{{result.recipe.label}}</h6>
+                    <a class="btn btn-outline-secondary" [routerLink]="['/recipe-detail', result.recipe.uri]" routerLinkActive="active">See recipe detail</a>   
                 </div>
             </div>
         </div>

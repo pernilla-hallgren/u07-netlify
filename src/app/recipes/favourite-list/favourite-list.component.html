@@ -1,26 +1,28 @@
-<p>favourite-list works!</p>
 
-<h3>Your favourite list!</h3>
-<button (click)="clearFavourites()">Clear List!</button>
+<div class="container-fluid text-center">
+    <h3>Your favourite recipes!</h3>
+    <button class="btn btn-outline-secondary" (click)="clearFavourites()">Clear List</button>
+</div>
 
-<div class="cart-item" *ngFor="let item of items">
+<div class="container-fluid">
+    <div class="row text-center justify-content-center">
+        <div class="col-sm-12 col-md-6 col-lg-3 p-3" *ngFor="let item of items">
+            <div class="card"> 
+                <img class="img-fluid img-thumbnail" src="{{ item.image }}" alt="">
+                <a class="thumbnail" href="#"><i class="bi bi-suit-heart-fill"></i></a>
+                <div class="card-body">
+                    <h6 class="card-title">{{ item.label }}</h6>
+                    <p>{{ item.ingredientLines }}</p>
+                    <button class="btn btn-outline-secondary" (click)="deleteOneFavourite(item)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>        
+</div>
+
+<!-- <div class="cart-item" *ngFor="let item of items">
   <span>{{ item.label }}</span>
   <span>{{ item.ingredientLines }}</span>
   <img class="img-fluid img-thumbnail" src="{{ item.image }}" alt="">
   <button (click)="deleteOneFavourite(item)">Delete</button>
-</div>
-
-<!-- <div class="card-deck">
-    <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-2 p-3" *ngFor="let item of items">
-            <div class="card"> 
-                <img class="img-fluid img-thumbnail" src="{{result.recipe.image}}" alt="">
-                <a class="thumbnail" href="#"><i class="bi bi-suit-heart-fill"></i></a>
-                <div class="card-body">
-                    <p class="card-title">{{ result.recipe.label }}</p>
-                    <a class="btn btn-primary" [routerLink]="['/recipe-detail', result.recipe.uri]" routerLinkActive="active">Go to recipe detail!</a>   
-                </div>
-            </div>
-        </div>
-    </div>     
 </div> -->

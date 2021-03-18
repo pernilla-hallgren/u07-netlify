@@ -1,24 +1,22 @@
-<p>recipe-detail works!</p>
 
-<!-- <a routerLink="/favourite-list">Go to your favourite-list!</a> -->
 
-<!-- <div *ngIf="recipe">
-  <h2>{{recipe.label | uppercase}}</h2>
-  <p>Ingredients: {{ recipe.ingredientLines }}</p>
-  <img class="img-fluid img-thumbnail" src="{{recipe.image}}" alt="">
-  <button (click)="addToFavourites(recipe)">Add to favourites!</button>
-    
-</div> -->
+<div class="container-fluid text-center m-3">
+    <h2>Recipe Detail</h2>
+</div>
 
-<div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-6" *ngIf="recipe">
-        <div class="card mb-3">
-            <img class="img-fluid img-thumbnail" src="{{recipe.image}}" alt="">
-            <div class="card-body">
-                <h2>{{recipe.label | uppercase}}</h2>
-                <p>Ingredients: {{ recipe.ingredientLines }}</p>
-                <button class="btn btn-primary" (click)="addToFavourites(recipe)">Add to favourites!</button>
+<section>
+    <div class="row text-center justify-content-center">
+        <div class="col-sm-12 col-md-8 col-lg-6 " *ngIf="recipe">
+            <div class="card mb-3">
+                <img class="img-fluid img-thumbnail" src="{{recipe.image}}" alt="">
+                <div class="card-body">
+                    <h2>{{recipe.label | uppercase}}</h2>
+                    <p>Ingredients: {{ recipe.ingredientLines }}</p>
+                    <!-- <p>Health Label: {{ recipe.healthLabel }}</p>
+                    <p>Diet Label: {{ recipe.dietLabel }}</p> -->
+                    <button class="btn btn-outline-secondary" (click)="addToFavourites(recipe)"><i class="bi bi-suit-heart-fill"></i>Add to favourites</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</section>

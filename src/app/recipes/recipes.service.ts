@@ -48,10 +48,13 @@ export class RecipesService {
 
   // Add to My-Recipes List
   addToFavourites(recipe) {
+    // console.log(recipe);
     this.items.push(recipe);
+    console.log(this.items);
   }
 
   getFavourites() {
+    // console.log(this.items);
     return this.items;
   }
 
