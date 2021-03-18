@@ -18,7 +18,6 @@ export class FavouriteListComponent implements OnInit {
     
   }
 
-  // denna metod kalla på serive metoden där vi skapat deleteOne()
   deleteOneFavourite(item) {
     this.recipesService.deleteOne(item);
   }
@@ -27,7 +26,5 @@ export class FavouriteListComponent implements OnInit {
     this.recipesService.clearFavouriteList();
     this.items = this.recipesService.getFavourites();
   }
-
-  
 
 }

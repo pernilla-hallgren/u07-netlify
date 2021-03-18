@@ -13,25 +13,13 @@
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="../../../assets/img/pexels-kaboompics-com-5938.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </div>
+                <img src="../../../assets/img/pexels-kaboompics-com-5938.jpg" class="d-block w-100" alt="Chicken and vegetable dish">
             </div>
             <div class="carousel-item">
-                <img src="../../../assets/img/pexels-alisha-mishra-1346217.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </div>
-            </div>
+                <img src="../../../assets/img/pexels-alisha-mishra-1346217.jpg" class="d-block w-100" alt="Lemon tart dessert">            
+            </div>    
             <div class="carousel-item">
-                <img src="../../../assets/img/pexels-ella-olsson-1640777.jpg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                </div>
+                <img src="../../../assets/img/pexels-ella-olsson-1640777.jpg" class="d-block w-100" alt="Vegetable dish">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-bs-slide="prev">
@@ -51,7 +39,7 @@
     <div class="row text-center mb-5">
         <div class="col-sm-12 col-md-6 col-lg-3 p-3" *ngFor="let result of ( results | async )?.hits">
             <div class="card m-4"> 
-                <img class="img-fluid img-thumbnail" src="{{result.recipe.image}}" alt="">
+                <img class="img-fluid img-thumbnail" src="{{result.recipe.image}}" alt="food image">
                 <i class="bi bi-suit-heart-fill"></i>      
 
                 <div class="card-body">
@@ -63,5 +51,3 @@
     </div>     
 </div>
 
-
-<!-- <router-outlet></router-outlet> -->

@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-// import { BasicsModule } from './basics/basics.module';
+
 import { RecipesModule } from './recipes/recipes.module';
 import { PageNotFoundComponent } from './basics/page-not-found/page-not-found.component';
 import { HomeComponent } from './basics/home/home.component';
@@ -21,7 +21,6 @@ import { FooterComponent } from './shared/footer/footer.component';
   ],
   imports: [
     BrowserModule,
-    // BasicsModule,
     HttpClientModule,
     RecipesModule,
     AppRoutingModule,

@@ -9,8 +9,6 @@ import { RecipesListComponent } from './recipes-list/recipes-list.component';
 
 import { RecipesRoutingModule } from './recipes-routing.module';
 
-
-
 @NgModule({
   declarations: [
     RecipeDetailComponent,

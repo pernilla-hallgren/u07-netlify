@@ -19,22 +19,15 @@ export class RecipeFormComponent implements OnInit {
   mealType: string;
   dietLabel: string;
   healthLabel: string;
-  // property results
+  
   results;
 
   constructor(private recipesService: RecipesService) { }
 
   onSubmit(form) {
     this.results = this.recipesService.findRecipe(form.value.querystring, form.value.mealType, form.value.dietLabel, form.value.healthLabel);
-    // this.results = this.recipesService.findRecipe(this.querystring);
     console.log(form.value);
   }
-
-  // selectedRecipe?: Recipe;
- 
-  // onSelect(recipe: Recipe): void {
-  //   this.selectedRecipe = recipe;
-  // }
 
   ngOnInit(): void {
   }
