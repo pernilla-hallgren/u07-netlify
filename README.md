@@ -40,6 +40,7 @@ I denna uppgift ska du bygga en rudimentär applikation med ramverket Angular (v
  
 För inspiration se:
 * https://www.tasteline.com/
+
 ​* https://www.ica.se/recept/​
 
 ### Goals

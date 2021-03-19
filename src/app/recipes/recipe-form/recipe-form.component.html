@@ -67,8 +67,8 @@
 
 <div class="card-deck">
     <div class="row">
-        <div class="col-sm-12 col-md-6 col-lg-2 p-3" *ngFor="let result of ( results | async )?.hits">
-            <div class="card m-4"> 
+        <div class="col-sm-12 col-md-4 col-lg-2 p-3" *ngFor="let result of ( results | async )?.hits">
+            <div class="card"> 
                 <img class="img-fluid img-thumbnail" src="{{result.recipe.image}}" alt="food image">
                 <i class="bi bi-suit-heart-fill"></i>  
                 <div class="card-body">

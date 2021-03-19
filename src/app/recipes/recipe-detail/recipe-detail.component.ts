@@ -20,9 +20,9 @@ export class RecipeDetailComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.route.paramMap.subscribe(paramMap => { // allt vi ha i uri:in ligger nu i paramMap
+      this.route.paramMap.subscribe(paramMap => { 
         const id = paramMap.get('id') 
-        this.recipesService.getRecipeById(id) // vi kallar på recipe service för att hämta datan från uri
+        this.recipesService.getRecipeById(id) 
           .subscribe(data => {
             this.recipe = data[0] 
         console.log(data);
@@ -32,7 +32,6 @@ export class RecipeDetailComponent implements OnInit {
 
   addToFavourites(recipe) {
     this.recipesService.addToFavourites(recipe);
-    // window.alert('Recipe has been added to your favourite list!');
   }
 
 
