@@ -26,7 +26,7 @@ export class RecipeFormComponent implements OnInit {
 
   onSubmit(form) {
     this.results = this.recipesService.findRecipe(form.value.querystring, form.value.mealType, form.value.dietLabel, form.value.healthLabel);
-    console.log(form.value);
+    // console.log(form.value);
   }
 
   ngOnInit(): void {

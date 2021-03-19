@@ -12,8 +12,6 @@
                 <div class="card-body">
                     <h2>{{recipe.label | uppercase}}</h2>
                     <p>Ingredients: {{ recipe.ingredientLines }}</p>
-                    <!-- <p>Health Label: {{ recipe.healthLabel }}</p>
-                    <p>Diet Label: {{ recipe.dietLabel }}</p> -->
                     <button class="btn btn-outline-secondary" (click)="addToFavourites(recipe)"><i class="bi bi-suit-heart-fill"></i>Add to favourites</button>
                 </div>
             </div>

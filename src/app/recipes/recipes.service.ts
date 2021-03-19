@@ -21,6 +21,7 @@ export class RecipesService {
     this.apiID = environment.apiID;
   }
 
+  // Search recipe from API
   findRecipe(q: string, mealType = null, dietLabel = null, healthLabel = null): Observable<any[]> {
     // turnery operator: har dom inte valt någon mealtype så skickar vi inte med en mealtyp data
     const mealTypeString = mealType !== "" ? "&mealType=" + mealType : "";
@@ -38,7 +39,7 @@ export class RecipesService {
   }
 
 
-  // Get 1 recipe by id
+  // Get on recipe by id
   getRecipeById(id: string): Observable<any[]> {
 
     let url = `${this.apiUrl}app_id=${this.apiID}&app_key=${this.apiKey}&r=`  
@@ -46,7 +47,7 @@ export class RecipesService {
     return this.http.get<any[]>(url + encodeURIComponent(id))
   };
 
-  // Add to My-Recipes List
+  // Add to Favourite Recipe List
   addToFavourites(recipe) {
     // console.log(recipe);
     this.items.push(recipe);
@@ -58,13 +59,14 @@ export class RecipesService {
     return this.items;
   }
 
-  // tar bort ur listan på My-Recipecs list
+  // Delete recipe from Favourite recipe list
   deleteOne(item) {
     // ta bort något ur en array när vi söker igenom den
     this.items.splice(this.items.indexOf(x => x.uri === item.uri), 1) 
     // hitta vilken position på den uri:n vi klickar på
   }
 
+ // Clear all recipes from list
   clearFavouriteList() {
     this.items = [];
     console.log(this.items);

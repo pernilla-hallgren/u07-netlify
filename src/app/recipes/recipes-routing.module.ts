@@ -9,7 +9,6 @@ const routes: Routes = [
   { path: 'recipe-search', component: RecipeFormComponent },
   { path: 'recipe-detail/:id', component: RecipeDetailComponent },
   { path: 'favourite-recipes', component: FavouriteListComponent },
-
 ];
 
 @NgModule({
