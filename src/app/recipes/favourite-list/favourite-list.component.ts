@@ -20,11 +20,11 @@ export class FavouriteListComponent implements OnInit {
 
   deleteOneFavourite(item) {
     this.recipesService.deleteOne(item);
-  }
+  };
 
   clearFavourites() {
     this.recipesService.clearFavouriteList();
     this.items = this.recipesService.getFavourites();
-  }
+  };
 
 }

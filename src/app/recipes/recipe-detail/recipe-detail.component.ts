@@ -26,13 +26,13 @@ export class RecipeDetailComponent implements OnInit {
           .subscribe(data => {
             this.recipe = data[0] 
         console.log(data);
-      })
-    })
-  }
+      });
+    });
+  };
 
   addToFavourites(recipe) {
     this.recipesService.addToFavourites(recipe);
-  }
+  };
 
 
 }
