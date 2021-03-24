@@ -9,6 +9,7 @@ body {
     font-family: 'Karla', sans-serif;
     font-size: 15px;
     font-weight: 200;
+    background-color: rgb(252, 252, 252);
 }
 
 .btn-outline-secondary {
@@ -33,5 +34,9 @@ body {
 .bi-suit-heart-fill:hover {
     color: rgb(1, 167, 1);
     cursor: pointer;
+}
+
+.card {
+  box-shadow: 7px 7px 16px #e2e2e2;
 }
 
