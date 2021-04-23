@@ -1,5 +1,25 @@
+<div class="form-group has-search">
+    <form (ngSubmit)="onSubmit(favouriteForm)" #favouriteForm="ngForm">
+        <h4 class="text-center mb-4">Add recipe list</h4>
+        <span class="fa fa-search form-control-feedback"></span>
+        <input class="form-control mb-3" name="name" type="text" placeholder="Add recipe list..." ngModel>
+        <div>
+            <button class="btn btn-outline-secondary" type="submit">Add</button>
+        </div>  
+    </form>  
+</div>
 
-<div class="container-fluid text-center mt-5">
+<div>
+    <ul>
+        <li>
+            <p>{{name}}</p>
+        </li>
+    </ul>
+    
+</div>
+
+
+<!-- <div class="container-fluid text-center mt-5">
     <h3>Your favourite recipes!</h3>
     <button class="btn btn-outline-secondary" (click)="clearFavourites()">Clear List</button>
 </div>
@@ -18,4 +38,4 @@
             </div>
         </div>
     </div>        
-</div>
+</div> -->

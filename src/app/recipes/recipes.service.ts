@@ -43,6 +43,7 @@ export class RecipesService {
     return this.http.get<any[]>(url + encodeURIComponent(id))
   };
 
+  // COMMENTER OUT THESE LATER
   // Add to Favourite Recipe List
   addToFavourites(recipe) {
     this.items.push(recipe);

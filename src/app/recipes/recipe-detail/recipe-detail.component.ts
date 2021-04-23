@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-
 import { RecipesService } from '../recipes.service';
-
 
 @Component({
   selector: 'app-recipe-detail',
@@ -16,7 +14,7 @@ export class RecipeDetailComponent implements OnInit {
   constructor(
     private recipesService: RecipesService, 
     private route: ActivatedRoute, 
-    private router: Router
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -33,6 +31,5 @@ export class RecipeDetailComponent implements OnInit {
   addToFavourites(recipe) {
     this.recipesService.addToFavourites(recipe);
   };
-
 
 }
