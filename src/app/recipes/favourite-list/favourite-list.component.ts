@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { RecipesService } from '../recipes.service';
+import { FavouriteListService } from './favourite-list.service';
 
 
 @Component({
@@ -12,19 +11,29 @@ export class FavouriteListComponent implements OnInit {
 
   // items = this.recipesService.getFavourites();
 
-  constructor(private recipesService: RecipesService) { }
+  constructor(
+    private favouriteListService: FavouriteListService) { }
 
   results;
 
   ngOnInit(): void {
-    
+    this.results = this.favouriteListService.favouriteLists
   }
 
   onSubmit(form) {
-    this.results = this.recipesService.findRecipe(form.value.name);
-    this.results.subscribe(data => console.log(data));
-    console.log('Hej');
+    this.favouriteListService.addFavouriteList(form.value.name);
+    // this.results.subscribe(data => console.log(data));
   };
+
+  deleteFavouriteList(id: number) {
+    this.favouriteListService.deleteFavouriteList(id);
+  }
+  
+  updateFavouriteList(id: number, name: string) {
+    this.favouriteListService.updateFavouriteList(id, name);
+  }
+
+
 
   // deleteOneFavourite(item) {
   //   this.recipesService.deleteOne(item);

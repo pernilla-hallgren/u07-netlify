@@ -1,17 +1,56 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+
+interface ApiResponce {
+  data: any[]
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavouriteListService {
 
-  constructor(private http: HttpClient) { }
+  private favouriteListSubject: BehaviorSubject <any[]>
+  public favouriteLists: Observable <any[]>
 
-  addFavouriteList(name: string): Observable<any> {
-    return this.http.post('http://127.0.0.1:80/api/auth/favourite-recipes', {name: name})//.subscribe(data => console.log(data));
+  constructor(
+    private http: HttpClient,
+    ) { 
+        this.favouriteListSubject = new BehaviorSubject <any[]> ([]);
+        this.favouriteLists = this.favouriteListSubject.asObservable()
+      }
+  
+  // DENNA ANVÄNDS INTE JUST NU KAN TAS BORT EV    
+  public get favouriteListsValue(): any[] {
+    return this.favouriteListSubject.value
+  }    
+
+  addFavouriteList(name: string) {
+    return this.http.post('http://127.0.0.1:80/api/auth/favourite-lists', {name: name})
+      .subscribe(data => {
+      this.getAllFavouriteLists();
+    })
   }
 
+  getAllFavouriteLists() {
+    return this.http.get('http://127.0.0.1:80/api/auth/favourite-lists').subscribe((data: ApiResponce)  => {
+      console.log(data)
+      this.favouriteListSubject.next(data.data)
+    })
+  }
 
+  deleteFavouriteList(id: number) {
+    return this.http.delete('http://127.0.0.1:80/api/auth/favourite-lists/' + id).subscribe(data => {
+      console.log(data)
+      this.getAllFavouriteLists();
+    })
+  }
+
+  updateFavouriteList(id: number, name: string) {
+    return this.http.put('http://127.0.0.1:80/api/auth/favourite-lists/' + id, {name: name}).subscribe(data => {
+      console.log(data)
+      this.getAllFavouriteLists();
+    })
+  }
 }

@@ -10,14 +10,29 @@
 </div>
 
 <div>
-    <ul>
-        <li>
-            <p>{{name}}</p>
+    <ul >
+        <li *ngFor="let result of ( results | async )">
+            <!-- Göra om result.name till en a länk som länkar till favourite-list-item routern och i den componenten 
+            så gör vi delete och update på favourite-list  -->
+            {{ result.name }}
+            <button class="btn btn-outline-secondary" (click)="deleteFavouriteList(result.id)">Delete</button>
+            <button class="btn btn-outline-secondary" (click)="deleteFavouriteList(result.id)">Update</button>
+
         </li>
     </ul>
     
 </div>
 
+<!-- <div class="col-sm-12 col-md-4 col-lg-2 p-3" >
+            <div class="card"> 
+                <img class="img-fluid img-thumbnail" src="{{result.recipe.image}}" alt="food image">
+                <i class="bi bi-suit-heart-fill"></i>  
+                <div class="card-body">
+                    <h6>{{result.recipe.label}}</h6>
+                    <a class="btn btn-outline-secondary" [routerLink]="['/recipe-detail', result.recipe.uri]" routerLinkActive="active">See recipe detail</a>   
+                </div>
+            </div>
+        </div> -->
 
 <!-- <div class="container-fluid text-center mt-5">
     <h3>Your favourite recipes!</h3>
