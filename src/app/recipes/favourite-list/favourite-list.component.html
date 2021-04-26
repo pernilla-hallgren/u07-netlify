@@ -2,7 +2,7 @@
     <form (ngSubmit)="onSubmit(favouriteForm)" #favouriteForm="ngForm">
         <h4 class="text-center mb-4">Add recipe list</h4>
         <span class="fa fa-search form-control-feedback"></span>
-        <input class="form-control mb-3" name="name" type="text" placeholder="Add recipe list..." ngModel>
+        <input class="form-control mb-3" name="name" type="text" [placeholder]="" ngModel>
         <div>
             <button class="btn btn-outline-secondary" type="submit">Add</button>
         </div>  
@@ -12,12 +12,12 @@
 <div>
     <ul >
         <li *ngFor="let result of ( results | async )">
-            <!-- Göra om result.name till en a länk som länkar till favourite-list-item routern och i den componenten 
-            så gör vi delete och update på favourite-list  -->
+            <!-- Göra om result.name till en a länk som länkar till en ny favourite-list-item router
+            skapa en ny service och component favourite-list-item och i den  
+            så gör vi delete och update på favourite-list som ett form??  -->
             {{ result.name }}
             <button class="btn btn-outline-secondary" (click)="deleteFavouriteList(result.id)">Delete</button>
-            <button class="btn btn-outline-secondary" (click)="deleteFavouriteList(result.id)">Update</button>
-
+            <button class="btn btn-outline-secondary" (click)="updateFavouriteList(result.id)"><a [routerLink]="['/favourite-list', result.id]" routerLinkActive="active">Update</a></button>
         </li>
     </ul>
     
