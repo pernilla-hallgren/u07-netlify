@@ -12,9 +12,21 @@
                 <div class="card-body">
                     <h2>{{recipe.label | uppercase}}</h2>
                     <p>Ingredients: {{ recipe.ingredientLines }}</p>
-                    <button class="btn btn-outline-secondary" (click)="addToFavourites(recipe)"><i class="bi bi-suit-heart-fill"></i>Add to favourites</button>
+                    <form (ngSubmit)="onSubmit(addToFavouriteList)" #addToFavouriteList="ngForm">
+                        <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-suit-heart-fill"></i>Add to favourites</button>
+                        <div class="container-fluid border-bottom p-1"> 
+                            <span *ngFor="let list of ( lists | async )">
+                                <input class="m-2" type="checkbox" id="{{ list.name }}" name="{{ list.id }}" ngModel>
+                                <a [routerLink]="['/favourite-list-items', list.id]">{{ list.name }}</a>
+                                
+                            </span>
+                        </div>
+                    </form>    
                 </div>
+
             </div>
         </div>
     </div>
 </section>
+
+                   

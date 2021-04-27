@@ -37,7 +37,6 @@ export class RecipesService {
 
   // Get on recipe by id
   getRecipeById(id: string): Observable<any[]> {
-
     let url = `${this.apiUrl}app_id=${this.apiID}&app_key=${this.apiKey}&r=`  
     console.log(url + encodeURIComponent(id)); 
     return this.http.get<any[]>(url + encodeURIComponent(id))

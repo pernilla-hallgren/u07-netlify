@@ -12,15 +12,12 @@
 <div>
     <ul >
         <li *ngFor="let result of ( results | async )">
-            <!-- Göra om result.name till en a länk som länkar till en ny favourite-list-item router
-            skapa en ny service och component favourite-list-item och i den  
-            så gör vi delete och update på favourite-list som ett form??  -->
-            {{ result.name }}
+            <a [routerLink]="['/favourite-list-items', result.id]">{{ result.name }}</a>
+            <span>{{result.id}}</span>
             <button class="btn btn-outline-secondary" (click)="deleteFavouriteList(result.id)">Delete</button>
             <button class="btn btn-outline-secondary" (click)="updateFavouriteList(result.id)"><a [routerLink]="['/favourite-list', result.id]" routerLinkActive="active">Update</a></button>
         </li>
-    </ul>
-    
+    </ul>   
 </div>
 
 <!-- <div class="col-sm-12 col-md-4 col-lg-2 p-3" >

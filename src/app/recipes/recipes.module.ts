@@ -8,6 +8,7 @@ import { RecipeDetailComponent } from './recipe-detail/recipe-detail.component';
 
 import { RecipesRoutingModule } from './recipes-routing.module';
 import { FavouriteListDetailsComponent } from './favourite-list-details/favourite-list-details.component';
+import { FavouriteListItemsComponent } from './favourite-list-items/favourite-list-items.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FavouriteListDetailsComponent } from './favourite-list-details/favourit
     RecipeFormComponent,
     FavouriteListComponent,
     FavouriteListDetailsComponent,
+    FavouriteListItemsComponent,
   ],
   imports: [
     CommonModule,

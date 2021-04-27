@@ -1,0 +1,7 @@
+<div *ngIf="favouriteListItems">
+    <h4>Favouite List</h4>
+    <li *ngFor="let item of favouriteListItems">
+        <p>{{item.recipe_label}}</p>
+        <button class="btn btn-outline-secondary" (click)="deleteFavouriteListItem(item.id)">Delete</button>
+    </li>    
+</div>

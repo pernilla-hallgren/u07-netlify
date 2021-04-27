@@ -9,7 +9,7 @@ import { FavouriteListService } from '../favourite-list/favourite-list.service';
 })
 export class FavouriteListDetailsComponent implements OnInit {
 
-  favouriteList;
+  data;
 
   constructor(
     private favouriteListService: FavouriteListService,
@@ -22,7 +22,7 @@ export class FavouriteListDetailsComponent implements OnInit {
         const id = paramMap.get('id') 
         this.favouriteListService.getFavouriteListById(id) 
           .subscribe((data: any) => {
-            this.favouriteList = data
+            this.data = data
             console.log(data);
       });
     });
@@ -30,7 +30,7 @@ export class FavouriteListDetailsComponent implements OnInit {
 
 
   onSubmit(form) {
-    this.favouriteListService.updateFavouriteList(this.favouriteList.id, form.value.name);
+    this.favouriteListService.updateFavouriteList(this.data.favouriteList.id, form.value.name);
   }
 
 }
