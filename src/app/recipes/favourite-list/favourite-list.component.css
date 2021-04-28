@@ -1,0 +1,23 @@
+.list-name {
+    font-size: 18px;
+    font-weight: 200;
+    color: black;
+}
+
+.list-name:hover {
+    color: rgb(1, 167, 1);
+}
+
+.update-list {
+    color: black;
+    text-decoration: none;
+}
+
+.update-list:hover {
+    color: white;
+}
+
+.bi-suit-heart {
+    color: rgb(1, 167, 1);
+}
+

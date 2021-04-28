@@ -28,6 +28,10 @@ export class FavouriteListService {
     return this.favouriteListSubject.value
   }    
 
+  public set favouriteListSubjectValue(value: any) {
+    this.favouriteListSubject.next(value);
+  }
+
   addFavouriteList(name: string) {
     return this.http.post('http://127.0.0.1:80/api/auth/favourite-lists', {name: name})
       .subscribe(data => {
@@ -59,5 +63,6 @@ export class FavouriteListService {
   getFavouriteListById(id: string) {
      return this.http.get('http://127.0.0.1:80/api/auth/favourite-lists/' + id)
   }
+
 
 }

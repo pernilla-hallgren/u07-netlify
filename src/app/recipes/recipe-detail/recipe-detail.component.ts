@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { RecipesService } from '../recipes.service';
 import { FavouriteListService } from '../../recipes/favourite-list/favourite-list.service';
 import { FavouriteListItemsService } from '../favourite-list-items/favourite-list-items.service';
+import { AuthStateService } from 'src/app/shared/auth-state.service';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -14,12 +15,14 @@ export class RecipeDetailComponent implements OnInit {
   recipe;
   lists;
   responseText = [];
+  isSignedIn: boolean;
 
   constructor(
     private recipesService: RecipesService, 
     private route: ActivatedRoute, 
     private favouriteListService: FavouriteListService,
     private favouriteListItemsService: FavouriteListItemsService,
+    private auth: AuthStateService,
     private router: Router,
   ) { }
 
@@ -33,6 +36,9 @@ export class RecipeDetailComponent implements OnInit {
             this.recipe = data[0] 
         console.log(data);
       });
+    });
+      this.auth.userAuthState.subscribe(val => {
+        this.isSignedIn = val
     });
   };
 

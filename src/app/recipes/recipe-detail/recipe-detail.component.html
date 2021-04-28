@@ -6,25 +6,27 @@
 
 <section>
     <div class="row text-center justify-content-center">
-        <div class="col-sm-12 col-md-8 col-lg-6 " *ngIf="recipe">
+        <div class="col-sm-12 col-md-8 col-lg-4" *ngIf="recipe">
             <div class="card mb-3">
-                <img class="img-fluid img-thumbnail" src="{{recipe.image}}" alt="">
+                <img class="img-fluid img-thumbnail m-3" src="{{recipe.image}}" alt="">
                 <div class="card-body">
                     <h2>{{recipe.label | uppercase}}</h2>
                     <p>Ingredients: {{ recipe.ingredientLines }}</p>
-                    <form (ngSubmit)="onSubmit(addToFavouriteList)" #addToFavouriteList="ngForm">
-                        <button class="btn btn-outline-secondary" type="submit"><i class="bi bi-suit-heart-fill"></i>Add to favourites</button>
-                        <div *ngIf="responseText"></div>
-                        <div *ngFor="let message of responseText">
-                            <p class="mt-3">{{ message }}</p>
-                        </div>
-                        <div class="container-fluid border-bottom p-1"> 
-                            <span *ngFor="let list of ( lists | async )">
-                                <input class="m-2" type="checkbox" id="{{ list.name }}" name="{{ list.id }}" ngModel>
-                                <a [routerLink]="['/favourite-list-items', list.id]">{{ list.name }}</a>
-                            </span>
-                        </div>
-                    </form>    
+                    <div *ngIf="isSignedIn">   
+                        <form (ngSubmit)="onSubmit(addToFavouriteList)" #addToFavouriteList="ngForm">
+                            <button class="btn btn-outline-secondary" type="submit">Add to favourites</button>
+                            <div *ngIf="responseText"></div>
+                            <div *ngFor="let message of responseText">
+                                <p class="msg mt-3">{{ message }}</p>
+                            </div>
+                            <div class="container-fluid border-bottom p-1"> 
+                                <span *ngFor="let list of ( lists | async )">
+                                    <input class="m-2" type="checkbox" id="{{ list.name }}" name="{{ list.id }}" ngModel>
+                                    <a [routerLink]="['/favourite-list-items', list.id]">{{ list.name }}</a>
+                                </span>
+                            </div>
+                        </form>
+                    </div>    
                 </div>
             </div>
         </div>

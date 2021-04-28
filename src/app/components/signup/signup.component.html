@@ -1,4 +1,4 @@
-<div class="auth-wrapper">
+<div class="auth-wrapper container">
   <form class="form-signin" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <h3 class="h3 mb-3 font-weight-normal text-center">Register User</h3>
 
@@ -33,6 +33,6 @@
       <label>Confirm Password</label>
       <input type="password" class="form-control" formControlName="password_confirmation">
     </div>
-    <button type="submit" class="btn btn-block btn-primary">Register User</button>
+    <button type="submit" class="btn btn-outline-success">Register User</button>
   </form>
 </div>

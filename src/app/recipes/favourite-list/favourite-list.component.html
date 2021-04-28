@@ -1,23 +1,24 @@
-<div class="form-group has-search">
-    <form (ngSubmit)="onSubmit(favouriteForm)" #favouriteForm="ngForm">
-        <h4 class="text-center mb-4">Add recipe list</h4>
-        <span class="fa fa-search form-control-feedback"></span>
-        <input class="form-control mb-3" name="name" type="text" [placeholder]="" ngModel>
-        <div>
-            <button class="btn btn-outline-secondary" type="submit">Add</button>
-        </div>  
-    </form>  
-</div>
+<div class="main">
+    <div class="form-group has-search container">
+        <form (ngSubmit)="onSubmit(favouriteForm)" #favouriteForm="ngForm">
+            <h4 class="text-center mb-4">Add recipe list</h4>
+            <span class="fa fa-search form-control-feedback"></span>
+            <input class="form-control mb-3" name="name" type="text" [placeholder]="" ngModel>
+            <div>
+                <button class="btn btn-outline-secondary" type="submit">Add new list</button>
+            </div>  
+        </form>  
+    </div>
 
-<div>
-    <ul >
-        <li *ngFor="let result of ( results | async )">
-            <a [routerLink]="['/favourite-list-items', result.id]">{{ result.name }}</a>
-            <span>{{result.id}}</span>
-            <button class="btn btn-outline-secondary" (click)="deleteFavouriteList(result.id)">Delete</button>
-            <button class="btn btn-outline-secondary" (click)="updateFavouriteList(result.id)"><a [routerLink]="['/favourite-list', result.id]" routerLinkActive="active">Update</a></button>
-        </li>
-    </ul>   
+    <div>
+        <div class="container justify-content-center">
+            <div *ngFor="let result of ( results | async )">
+                <a class="list-name mr-2" [routerLink]="['/favourite-list-items', result.id]"><i class="bi bi-suit-heart mr-2"></i>{{ result.name }}</a>
+                <button class="btn btn-outline-secondary m-2 ml-2" (click)="deleteFavouriteList(result.id)"><i class="bi bi-trash">Delete</i></button>
+                <button class="btn btn-outline-secondary m-2" (click)="updateFavouriteList(result.id)"><a class="update-list" [routerLink]="['/favourite-list', result.id]" routerLinkActive="active">Update</a></button>
+            </div>
+        </div>   
+    </div>
 </div>
 
 <!-- <div class="col-sm-12 col-md-4 col-lg-2 p-3" >
