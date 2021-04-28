@@ -13,6 +13,7 @@ export class RecipeDetailComponent implements OnInit {
 
   recipe;
   lists;
+  responseText = [];
 
   constructor(
     private recipesService: RecipesService, 
@@ -52,18 +53,14 @@ export class RecipeDetailComponent implements OnInit {
         this.recipe.label,
         this.recipe.ingredientLines.join(' ')
       )
+      .subscribe((data: any) => {
+        console.log(data);
+        this.favouriteListService.getAllFavouriteLists();
+        this.responseText.push(data.message);
+      })
     }  
   }
 
-  
-  // recipe_detail_id: this.recipe.uri
 
-  // addToFavourites(recipe) {
-  //   this.recipesService.addToFavourites(recipe);
-  // };
-
-  // addItemToFavouriteList(listId: number, recipeId: string, image: string, label: string, ingredients: string) {
-  //   this.FavouriteListItemsService.addItemToFavouriteList(listId, recipeId, image, label, ingredients);
-  // }
 
 }
