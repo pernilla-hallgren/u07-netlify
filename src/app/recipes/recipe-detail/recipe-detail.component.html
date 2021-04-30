@@ -3,12 +3,15 @@
 <div class="container-fluid text-center m-3">
     <h2>Recipe Detail</h2>
 </div>
+<div>
+    <button class="btn btn-outline-secondary ml-4" routerLink="/home" routerLinkActive="active"><i class="bi bi-arrow-left mr-2"></i>Back</button> 
+</div>
 
 <section>
     <div class="row text-center justify-content-center">
         <div class="col-sm-12 col-md-8 col-lg-4" *ngIf="recipe">
             <div class="card mb-3">
-                <img class="img-fluid img-thumbnail m-3" src="{{recipe.image}}" alt="">
+                <img class="img-fluid rounded m-3" src="{{recipe.image}}" alt="food image">
                 <div class="card-body">
                     <h2>{{recipe.label | uppercase}}</h2>
                     <p>Ingredients: {{ recipe.ingredientLines }}</p>
@@ -19,7 +22,7 @@
                             <div *ngFor="let message of responseText">
                                 <p class="msg mt-3">{{ message }}</p>
                             </div>
-                            <div class="container-fluid border-bottom p-1"> 
+                            <div class="container-fluid border-top m-3 p-1"> 
                                 <span *ngFor="let list of ( lists | async )">
                                     <input class="m-2" type="checkbox" id="{{ list.name }}" name="{{ list.id }}" ngModel>
                                     <a [routerLink]="['/favourite-list-items', list.id]">{{ list.name }}</a>

@@ -43,7 +43,6 @@ export class RecipeDetailComponent implements OnInit {
   };
 
   onSubmit(form) {
-    // console.log(form.value);
     const arrayOfLists = [];
     for(let key in form.value) {
       console.log(form.value[key]);
@@ -66,7 +65,5 @@ export class RecipeDetailComponent implements OnInit {
       })
     }  
   }
-
-
 
 }

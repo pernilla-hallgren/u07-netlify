@@ -1,20 +1,16 @@
-<!-- <div *ngIf="favouriteListItems">
-    <h4>Favouite List</h4>
-    <li *ngFor="let item of favouriteListItems">
-        <p>{{item.recipe_label}}</p>
-        <button class="btn btn-outline-secondary" (click)="deleteFavouriteListItem(item.id)">Delete</button>
-    </li>    
-</div> -->
+
 <div class="container-fluid text-center m-3">
     <h2>Favouite List</h2>
+</div>
+<div>
+    <button class="btn btn-outline-secondary ml-4" routerLink="/favourite-recipes" routerLinkActive="active"><i class="bi bi-arrow-left mr-2"></i>Back</button> 
 </div>
 <!-- Recipe Card -->
 <div class="container-fluid">
     <div class="row text-center mb-5" *ngIf="favouriteListItems">
         <div class="col-sm-12 col-md-6 col-lg-3 p-3" *ngFor="let item of favouriteListItems">
             <div class="card m-4"> 
-                <img class="img-fluid img-thumbnail m-2" src="{{ item.recipe_image }}" alt="food image">
-                <i class="bi bi-suit-heart-fill"></i>      
+                <img class="img-fluid rounded m-2" src="{{ item.recipe_image }}" alt="food image">      
                 <div class="card-body">
                     <h6 class="card-title">{{ item.recipe_label | uppercase }}</h6>
                     <p>Ingredients: {{ item.recipe_ingredientlines }}</p>

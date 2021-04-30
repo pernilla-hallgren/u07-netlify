@@ -31,7 +31,6 @@ export class AppComponent implements OnInit {
 
   }
 
-  // Signout
   signOut() {
     this.auth.setAuthState(false);
     this.token.removeToken();

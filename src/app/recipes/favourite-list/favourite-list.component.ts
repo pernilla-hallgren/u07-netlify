@@ -9,8 +9,6 @@ import { FavouriteListService } from './favourite-list.service';
 })
 export class FavouriteListComponent implements OnInit {
 
-  // items = this.recipesService.getFavourites();
-
   constructor(
     private favouriteListService: FavouriteListService) { }
 
@@ -22,7 +20,6 @@ export class FavouriteListComponent implements OnInit {
 
   onSubmit(form) {
     this.favouriteListService.addFavouriteList(form.value.name);
-    // this.results.subscribe(data => console.log(data));
   };
 
   deleteFavouriteList(id: number) {
@@ -32,7 +29,5 @@ export class FavouriteListComponent implements OnInit {
   updateFavouriteList(id: number, name: string) {
     this.favouriteListService.updateFavouriteList(id, name);
   }
-
-
 
 }

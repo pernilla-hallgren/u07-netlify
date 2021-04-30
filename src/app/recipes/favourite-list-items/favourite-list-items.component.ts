@@ -35,8 +35,7 @@ export class FavouriteListItemsComponent implements OnInit {
   deleteFavouriteListItem(id: number) {
     this.favouriteListItemsService.deleteFavouriteListItem(id)
       .subscribe(data => {
-        window.location.reload();
-        // this.router.navigate(['/favourite-list-items', this.listId]);
+        window.location.reload(); // Behövs denna???
       }) 
   }
 

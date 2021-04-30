@@ -1,12 +1,13 @@
-<div class="form-group has-search" *ngIf="data">
-    <form (ngSubmit)="onSubmit(updateForm)" #updateForm="ngForm">
-        <h4 class="text-center mb-4">Favourite List Details</h4>
-        <span class="fa fa-search form-control-feedback"></span>
-        <input class="form-control mb-3" name="name" type="text" [placeholder]="data.favouriteList.name" ngModel>
-        <div>
-            <button class="btn btn-outline-secondary" type="submit">Submit</button>
-        </div>  
-    </form>  
-
+<div class="container">
+    <div class="form-group has-search" *ngIf="data">
+        <form (ngSubmit)="onSubmit(updateForm)" #updateForm="ngForm">
+            <h4 class="text-center mb-4">Favourite List Details</h4>
+            <span class="fa fa-search form-control-feedback"></span>
+            <input class="form-control mb-3" name="name" type="text" [placeholder]="data.favouriteList.name" ngModel>
+            <div>
+                <button class="btn btn-outline-secondary" type="submit">Submit</button>
+            </div>  
+        </form>  
+    </div>
 </div>
 

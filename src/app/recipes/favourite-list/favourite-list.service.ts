@@ -22,8 +22,7 @@ export class FavouriteListService {
         this.favouriteListSubject = new BehaviorSubject <any[]> ([]);
         this.favouriteLists = this.favouriteListSubject.asObservable()
       }
-  
-  // DENNA ANVÄNDS INTE JUST NU KAN TAS BORT EV    
+    
   public get favouriteListsValue(): any[] {
     return this.favouriteListSubject.value
   }    
@@ -63,6 +62,5 @@ export class FavouriteListService {
   getFavouriteListById(id: string) {
      return this.http.get('http://127.0.0.1:80/api/auth/favourite-lists/' + id)
   }
-
 
 }

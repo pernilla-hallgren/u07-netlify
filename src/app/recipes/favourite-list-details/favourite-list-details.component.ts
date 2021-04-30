@@ -28,7 +28,6 @@ export class FavouriteListDetailsComponent implements OnInit {
     });
   };
 
-
   onSubmit(form) {
     this.favouriteListService.updateFavouriteList(this.data.favouriteList.id, form.value.name);
   }
