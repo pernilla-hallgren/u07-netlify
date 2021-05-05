@@ -46,14 +46,12 @@ export class FavouriteListService {
 
   deleteFavouriteList(id: number) {
     return this.http.delete('https://u08-recipe-api-backend.herokuapp.com/api/auth/favourite-lists/' + id).subscribe(data => {
-      console.log(data)
       this.getAllFavouriteLists();
     })
   }
 
   updateFavouriteList(id: number, name: string) {
     return this.http.put('https://u08-recipe-api-backend.herokuapp.com/api/auth/favourite-lists/' + id, {name: name}).subscribe(data => {
-      console.log(data)
       this.getAllFavouriteLists();
       this.router.navigate(['/favourite-recipes']);
     })

@@ -30,8 +30,6 @@ export class RecipesService {
  
     let url = `${this.apiUrl}app_id=${this.apiID}&app_key=${this.apiKey}&q=` + query + mealTypeString + dietLabelString + healthLabelString;
 
-    console.log(url);
-
     return this.http.get<any[]>(url);
   };
 
@@ -41,25 +39,5 @@ export class RecipesService {
     console.log(url + encodeURIComponent(id)); 
     return this.http.get<any[]>(url + encodeURIComponent(id))
   };
-
-  // COMMENTER OUT THESE LATER
-  // Add to Favourite Recipe List
-//   addToFavourites(recipe) {
-//     this.items.push(recipe);
-//   };
-
-//   getFavourites() {
-//     return this.items;
-//   };
-
-//   // Delete recipe from Favourite recipe list
-//   deleteOne(item) {
-//     this.items.splice(this.items.indexOf(x => x.uri === item.uri), 1) 
-//   }
-
-//  // Clear all recipes from list
-//   clearFavouriteList() {
-//     this.items = [];
-//   };
 
 }

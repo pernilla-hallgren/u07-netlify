@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './../../shared/auth.service';
 
-// User interface
 export class User {
   name: String;
   email: String;

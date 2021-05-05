@@ -23,7 +23,6 @@ export class FavouriteListDetailsComponent implements OnInit {
         this.favouriteListService.getFavouriteListById(id) 
           .subscribe((data: any) => {
             this.data = data
-            console.log(data);
       });
     });
   };
