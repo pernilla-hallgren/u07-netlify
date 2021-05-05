@@ -21,7 +21,7 @@ export class RecipesService {
     this.apiID = environment.apiID;
   }
 
-  // Search recipe from API
+  // SEARCH RECIPE FROM API
   findRecipe(q: string, mealType = null, dietLabel = null, healthLabel = null): Observable<any[]> {
     const mealTypeString = mealType !== "" ? "&mealType=" + mealType : "";
     const dietLabelString = dietLabel !== "" ? "&dietLabels=" + dietLabel : "";
@@ -35,7 +35,7 @@ export class RecipesService {
     return this.http.get<any[]>(url);
   };
 
-  // Get on recipe by id
+  // GET RECIPE BY ID
   getRecipeById(id: string): Observable<any[]> {
     let url = `${this.apiUrl}app_id=${this.apiID}&app_key=${this.apiKey}&r=`  
     console.log(url + encodeURIComponent(id)); 
@@ -44,22 +44,22 @@ export class RecipesService {
 
   // COMMENTER OUT THESE LATER
   // Add to Favourite Recipe List
-  addToFavourites(recipe) {
-    this.items.push(recipe);
-  };
+//   addToFavourites(recipe) {
+//     this.items.push(recipe);
+//   };
 
-  getFavourites() {
-    return this.items;
-  };
+//   getFavourites() {
+//     return this.items;
+//   };
 
-  // Delete recipe from Favourite recipe list
-  deleteOne(item) {
-    this.items.splice(this.items.indexOf(x => x.uri === item.uri), 1) 
-  }
+//   // Delete recipe from Favourite recipe list
+//   deleteOne(item) {
+//     this.items.splice(this.items.indexOf(x => x.uri === item.uri), 1) 
+//   }
 
- // Clear all recipes from list
-  clearFavouriteList() {
-    this.items = [];
-  };
+//  // Clear all recipes from list
+//   clearFavouriteList() {
+//     this.items = [];
+//   };
 
 }

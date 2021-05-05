@@ -32,27 +32,27 @@ export class FavouriteListService {
   }
 
   addFavouriteList(name: string) {
-    return this.http.post('http://127.0.0.1:80/api/auth/favourite-lists', {name: name})
+    return this.http.post('https://u08-recipe-api-backend.herokuapp.com/api/auth/favourite-lists', {name: name})
       .subscribe(data => {
       this.getAllFavouriteLists();
     })
   }
 
   getAllFavouriteLists() {
-    return this.http.get('http://127.0.0.1:80/api/auth/favourite-lists').subscribe((data: ApiResponce)  => {
+    return this.http.get('https://u08-recipe-api-backend.herokuapp.com/api/auth/favourite-lists').subscribe((data: ApiResponce)  => {
       this.favouriteListSubject.next(data.data)
     })
   }
 
   deleteFavouriteList(id: number) {
-    return this.http.delete('http://127.0.0.1:80/api/auth/favourite-lists/' + id).subscribe(data => {
+    return this.http.delete('https://u08-recipe-api-backend.herokuapp.com/api/auth/favourite-lists/' + id).subscribe(data => {
       console.log(data)
       this.getAllFavouriteLists();
     })
   }
 
   updateFavouriteList(id: number, name: string) {
-    return this.http.put('http://127.0.0.1:80/api/auth/favourite-lists/' + id, {name: name}).subscribe(data => {
+    return this.http.put('https://u08-recipe-api-backend.herokuapp.com/api/auth/favourite-lists/' + id, {name: name}).subscribe(data => {
       console.log(data)
       this.getAllFavouriteLists();
       this.router.navigate(['/favourite-recipes']);
@@ -60,7 +60,7 @@ export class FavouriteListService {
   }
 
   getFavouriteListById(id: string) {
-     return this.http.get('http://127.0.0.1:80/api/auth/favourite-lists/' + id)
+     return this.http.get('https://u08-recipe-api-backend.herokuapp.com/api/auth/favourite-lists/' + id)
   }
 
 }

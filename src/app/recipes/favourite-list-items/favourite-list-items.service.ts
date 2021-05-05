@@ -16,7 +16,7 @@ export class FavouriteListItemsService {
 
 
   addItemToFavouriteList(listId: string, recipeId: string, image: string, label: string, ingredients: string ) {
-    return this.http.post('http://127.0.0.1:80/api/auth/favourite-list-items', {
+    return this.http.post('https://u08-recipe-api-backend.herokuapp.com/api/auth/favourite-list-items', {
       favourite_list_id: listId, 
       recipe_detail_id: recipeId,
       recipe_image: image,   
@@ -26,14 +26,14 @@ export class FavouriteListItemsService {
   }
 
   getAllFavouriteListItems() {
-    return this.http.get('http://127.0.0.1:80/api/auth/favourite-list-items').subscribe(data => {
+    return this.http.get('https://u08-recipe-api-backend.herokuapp.com/api/auth/favourite-list-items').subscribe(data => {
       console.log(data);
       this.favouriteListService.getAllFavouriteLists();
     })
   }
 
   deleteFavouriteListItem(id: number) {
-    return this.http.delete('http://127.0.0.1:80/api/auth/favourite-list-items/' + id)
+    return this.http.delete('https://u08-recipe-api-backend.herokuapp.com/api/auth/favourite-list-items/' + id)
 
   }
 
